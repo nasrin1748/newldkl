@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>local modules</title>
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2022.12.1/pyscript.css" />
+   <script defer src="https://pyscript.net/releases/2022.12.1/pyscript.js"></script>
+      <style>
+      <style>
+        body {
+            font-family: monospace;
+            background-color: #282c34;
+            color: white;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            background: black;
+            color: green;
+            border: none;
+            outline: none;
+        }
+        button {
+            width: 18%;
+            height:50px;
+            background: green;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+  </style>
+  </head>
+  <body>
+ <div id="terminal"></div>
+    <textarea id="code" >print("hello")</textarea>
+    <button id="execute">Execute</button>
+      <py-config>
+        "packages" = ["pandas","html2text"]
+        [[fetch]]
+        files = ["./main.py","./main.js"]
+      </py-config>
+      <py-script>
+import js
+result=js.executeCode()
+print(result)
+      </py-script>
+<script src='main.js'></script>
+  </body>
+</html>
